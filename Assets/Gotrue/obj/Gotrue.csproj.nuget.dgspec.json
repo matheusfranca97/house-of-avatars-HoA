@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\joahg\\OneDrive\\Documents\\Elite Pixel Studios\\Client Work\\house-of-avatars\\Assets\\Gotrue\\Gotrue.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\joahg\\OneDrive\\Documents\\Elite Pixel Studios\\Client Work\\house-of-avatars\\Assets\\Gotrue\\Gotrue.csproj": {
+      "version": "6.0.3",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\joahg\\OneDrive\\Documents\\Elite Pixel Studios\\Client Work\\house-of-avatars\\Assets\\Gotrue\\Gotrue.csproj",
+        "projectName": "Supabase.Gotrue",
+        "projectPath": "C:\\Users\\joahg\\OneDrive\\Documents\\Elite Pixel Studios\\Client Work\\house-of-avatars\\Assets\\Gotrue\\Gotrue.csproj",
+        "packagesPath": "C:\\Users\\joahg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joahg\\OneDrive\\Documents\\Elite Pixel Studios\\Client Work\\house-of-avatars\\Assets\\Gotrue\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\joahg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.bepinex.dev/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Supabase.Core": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.5.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

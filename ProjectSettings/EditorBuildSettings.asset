@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Startup.unity
+    guid: b75db7b5aa8b10f44b70e827b084f32d
+  - enabled: 1
+    path: Assets/Scenes/Server Scene.unity
+    guid: b1e1c5a8ed18d824fa027b6918e40661
+  - enabled: 1
+    path: Assets/Scenes/Essentials.unity
+    guid: cf26352f564abf945994b19334af9d3f
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: b1e52b35e8cc8dd49b0aecd59c6ae6ac
+  - enabled: 1
+    path: Assets/Scenes/Game Essentials.unity
+    guid: 9949e4025bdf12f44aa13b8bcb8b62b9
+  - enabled: 1
+    path: Assets/Scenes/Level Scenes/Outside.unity
+    guid: 7a251a823dac896498cee13ebaaf809d
+  - enabled: 1
+    path: Assets/Scenes/Level Scenes/Church.unity
+    guid: 328f10a8b7a4b6a47b16c640da1db47c
+  - enabled: 1
+    path: Assets/Scenes/Level Scenes/Crypt.unity
+    guid: 10ccad913a5adee4eb48056cc1f3555c
+  m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
