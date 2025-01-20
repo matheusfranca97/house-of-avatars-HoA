@@ -104,14 +104,14 @@ namespace Supabase.Gotrue
 		/// <inheritdoc />
 		public async Task<GenerateLinkResponse?> GenerateLink(GenerateLinkOptions options)
 		{
-			 var response = await _api.GenerateLink(_serviceKey, options);
-			 response.EnsureSuccessStatusCode();
+			var response = await _api.GenerateLink(_serviceKey, options);
+			response.EnsureSuccessStatusCode();
 
-			 if (response.Content is null)
-				 return null;
-			 
-			 var result = JsonConvert.DeserializeObject<GenerateLinkResponse>(response.Content);
-			 return result;
+			if (response.Content is null)
+				return null;
+
+			var result = JsonConvert.DeserializeObject<GenerateLinkResponse>(response.Content);
+			return result;
 		}
 
 		/// <inheritdoc />
