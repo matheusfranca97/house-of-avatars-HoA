@@ -15,7 +15,7 @@ public class BlockedChatTrigger : MonoBehaviour
         if (other.GetComponent<PlayerController>() == null)
             return;
 
-        ChatLog.chatLogMessages.Add(new ChatLogMessage(-1, ChatMessageType.Whisper, PlayerAuthLevel.Server, "Guests cannot leave the church area. Make an account to venture further."));
+        ChatLog.chatLogMessages.Add(new ChatLogMessage(-1, ChatMessageType.Whisper, PlayerAuthLevel.Server, "Guests cannot leave the Sanctuary area. Make an account to venture further."));
         nextPossibleTriggerTime = triggerCooldown + Time.time;
     }
 }

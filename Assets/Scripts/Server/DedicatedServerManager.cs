@@ -202,9 +202,9 @@ NgVIknKY/55pBVa8s0YS8O1l0jbVPFsYOCtyNPkdiWdLCGZqXJ6R
 #endif
     }
 #endif
-#endregion
-        #region Network Callbacks
-        private void OnNetworkTick()
+    #endregion
+    #region Network Callbacks
+    private void OnNetworkTick()
     {
 #if !UNITY_WEBGL
         if (useMultiplay)
@@ -627,7 +627,7 @@ NgVIknKY/55pBVa8s0YS8O1l0jbVPFsYOCtyNPkdiWdLCGZqXJ6R
         {
             return;
         }
-        for (int i=0; i < keys.Length; i++)
+        for (int i = 0; i < keys.Length; i++)
         {
             netPlayer.avatar.animator.SetFloat(keys[i].text, values[i]);
         }
@@ -687,11 +687,11 @@ NgVIknKY/55pBVa8s0YS8O1l0jbVPFsYOCtyNPkdiWdLCGZqXJ6R
             }
         }
     }
-    
+
     public void SendChatMessage(ulong sender, ChatLogMessage message)
     {
         NetworkPlayer senderPlayer = GetPlayerFromID(sender);
-        
+
         if (message.messageType is ChatMessageType.Shout || message.messageType is ChatMessageType.Orator)
         {
             if (senderPlayer.authLevel < PlayerAuthLevel.Admin && !senderPlayer.isMuted)
@@ -727,10 +727,10 @@ NgVIknKY/55pBVa8s0YS8O1l0jbVPFsYOCtyNPkdiWdLCGZqXJ6R
         message.SetID(currentID);
         currentID++;
 
-        if (senderPlayer.authLevel > PlayerAuthLevel.User) 
+        if (senderPlayer.authLevel > PlayerAuthLevel.User)
         {
             string[] splitMessage = message.message.ToString().Split(":");
-            message.message = new FixedString512Bytes("<color=red>" + splitMessage[0] + "</color>: " + string.Join(":", splitMessage, 1, splitMessage.Length-1));
+            message.message = new FixedString512Bytes("<color=red>" + splitMessage[0] + "</color>: " + string.Join(":", splitMessage, 1, splitMessage.Length - 1));
         }
 
         foreach (NetworkPlayer recipient in instance.networkPlayers
@@ -740,8 +740,9 @@ NgVIknKY/55pBVa8s0YS8O1l0jbVPFsYOCtyNPkdiWdLCGZqXJ6R
         }
     }
 
-    public void SendWhisperMessage(ulong sender, ulong recipient, ChatLogMessage message, string recipientName="")
+    public void SendWhisperMessage(ulong sender, ulong recipient, ChatLogMessage message, string recipientName = "")
     {
+        Debug.Log("sending message");
         NetworkPlayer senderPlayer = GetPlayerFromID(sender);
 
         //Check recipient exists
@@ -770,10 +771,23 @@ NgVIknKY/55pBVa8s0YS8O1l0jbVPFsYOCtyNPkdiWdLCGZqXJ6R
         currentID++;
 
         string senderName = (sender != 0 && senderPlayer.authLevel > PlayerAuthLevel.User ? "<color=red>" : "")
-            + (sender != 0 ? senderPlayer.displayName : "Server") 
+            + (sender != 0 ? senderPlayer.displayName : "Server")
             + (sender != 0 && senderPlayer.authLevel > PlayerAuthLevel.User ? "</color>" : "");
+
+
+        recipientName = (recipient != 0 && recipientPlayer.authLevel > PlayerAuthLevel.User ? "<color=red>" : "")
+       + (recipient != 0 ? recipientPlayer.displayName : "Server")
+       + (recipient != 0 && recipientPlayer.authLevel > PlayerAuthLevel.User ? "</color>" : "");
+
+        Debug.Log(recipientName);
+
         string recipientMessage = $"Whisper from {senderName}: {message.message}";
-        string senderMessage = $"Whisper to {senderName}: {message.message}";
+        string senderMessage = $"Whisper to {recipientName}: {message.message}";
+
+        // string recipientMessage = $"Whisper fradasdadom {senderName}: {message.message}";
+        // string senderMessage = $"Whispeasdadasdasdadr to {senderName}: {message.message}";
+
+
 
         message.message = recipientMessage;
         recipientPlayer.playerObject.ClientRecieveMessageRPC(message);
@@ -815,7 +829,7 @@ NgVIknKY/55pBVa8s0YS8O1l0jbVPFsYOCtyNPkdiWdLCGZqXJ6R
         networkManager.DisconnectClient(playerRef, "Account deleted successfully");
         await adminClient.DeleteUser(netPlayer.supabaseUID);
         await supabaseClient.From<GameUser>().Where(x => x.Id == netPlayer.supabaseUID).Delete();
-        await supabaseClient.From<GameUsername>().Where(x => x.Id == netPlayer.supabaseUID).Delete();   
+        await supabaseClient.From<GameUsername>().Where(x => x.Id == netPlayer.supabaseUID).Delete();
     }
     #endregion
     #region Admin Toolbox

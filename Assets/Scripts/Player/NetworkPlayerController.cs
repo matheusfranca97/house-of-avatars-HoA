@@ -100,6 +100,7 @@ public class NetworkPlayerController : NetworkBehaviour
     [Rpc(SendTo.Server)]
     public void ServerSendWhisperMessageRPC(ulong sender, ulong reciever, ChatLogMessage message, string recipientName = "")
     {
+        Debug.Log("rpc sending message");
         DedicatedServerManager.instance.SendWhisperMessage(sender, reciever, message, recipientName);
     }
 

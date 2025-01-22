@@ -14975,7 +14975,6 @@ GameObject:
   - component: {fileID: 568847432}
   - component: {fileID: 568847431}
   - component: {fileID: 568847430}
-  - component: {fileID: 568847429}
   - component: {fileID: 568847434}
   m_Layer: 5
   m_Name: Rules Button
@@ -15005,20 +15004,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
---- !u!114 &568847429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 568847427}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47d929048ec5c54b9776f03b8db313e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 568847431}
-  screenType: 3
 --- !u!114 &568847430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22763,7 +22748,6 @@ GameObject:
   - component: {fileID: 930018908}
   - component: {fileID: 930018907}
   - component: {fileID: 930018906}
-  - component: {fileID: 930018905}
   - component: {fileID: 930018904}
   - component: {fileID: 930018909}
   m_Layer: 5
@@ -22814,20 +22798,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &930018905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930018902}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47d929048ec5c54b9776f03b8db313e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 930018906}
-  screenType: 1
 --- !u!114 &930018906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32833,7 +32803,6 @@ GameObject:
   - component: {fileID: 1380798570}
   - component: {fileID: 1380798569}
   - component: {fileID: 1380798572}
-  - component: {fileID: 1380798573}
   - component: {fileID: 1380798574}
   m_Layer: 5
   m_Name: Help Button
@@ -32965,20 +32934,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &1380798573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380798566}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47d929048ec5c54b9776f03b8db313e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 1380798569}
-  screenType: 2
 --- !u!114 &1380798574
 MonoBehaviour:
   m_ObjectHideFlags: 0

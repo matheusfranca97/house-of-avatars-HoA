@@ -5436,7 +5436,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PLAY AS GUEST
+  m_Text: ENTER AS GUEST
 --- !u!222 &505473238
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24863,7 +24863,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PLAY NOW
+  m_Text: ENTER NOW
 --- !u!222 &2020604711
 CanvasRenderer:
   m_ObjectHideFlags: 0

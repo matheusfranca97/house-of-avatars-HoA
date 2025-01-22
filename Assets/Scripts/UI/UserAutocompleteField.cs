@@ -22,6 +22,8 @@ public class UserAutocompleteField : MonoBehaviour
         field.onValueChanged.AddListener(OnTextChanged);
         field.onSubmit.AddListener(x => ClearUserList());
         field.onEndEdit.AddListener(x => ClearUserList());
+
+        GetComponentInParent<Button>().onClick.AddListener(OnParentClicked);
     }
 
     public void OnTextChanged(string newText)
@@ -47,7 +49,7 @@ public class UserAutocompleteField : MonoBehaviour
         }
     }
 
-    public void ClearUserList(bool bypassUICheck=false)
+    public void ClearUserList(bool bypassUICheck = false)
     {
         if (UIUtils.IsPointerOverUIElement(UIUtils.GetEventSystemRaycastResults(), "UI_Autocomplete_Field") && !bypassUICheck)
             return;
@@ -61,6 +63,14 @@ public class UserAutocompleteField : MonoBehaviour
     {
         field.text = userField.text.text;
         field.DeactivateInputField();
+
         ClearUserList(true);
+        PopulateUserList(PlayerList.instance.playerNameList);
+    }
+
+    public void OnParentClicked()
+    {
+        ClearUserList(true);
+        PopulateUserList(PlayerList.instance.playerNameList);
     }
 }

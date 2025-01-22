@@ -98,6 +98,8 @@ public class ChatInput : MonoBehaviour
                 PlayerSettingsManager.instance.authLevel.value,
                 PlayerSettingsManager.instance.playerAvatarDataIndex.value,
                 message);
+
+            Debug.Log(chatMessage.message);
             PlayerController.instance.networkController.ServerSendWhisperMessageRPC(NetworkManager.Singleton.LocalClientId, recipientPlayer, chatMessage);
         }
     }
@@ -169,13 +171,19 @@ public class ChatInput : MonoBehaviour
         if (chatMode.value == ChatMessageType.Pray)
             ChatLog.chatLogMessages.Add(new ChatLogMessage(0, ChatMessageType.Pray, PlayerAuthLevel.User, PlayerSettingsManager.instance.playerAvatarDataIndex.value, textInputField.text));
         else if (chatMode.value == ChatMessageType.Local)
+        {
+            Debug.Log("Local");
             AddChatMessage(textInputField.text, ChatMessageType.Local);
+        }
         else if (chatMode.value == ChatMessageType.Shout)
             AddChatMessage(textInputField.text, ChatMessageType.Shout);
         else if (chatMode.value == ChatMessageType.Orator)
             AddChatMessage(textInputField.text, ChatMessageType.Orator);
         else
+        {
+            Debug.Log("whisper");
             AddChatMessage_SendWhisper(whisperToInputField.text, textInputField.text);
+        }
 
         textInputField.SetTextWithoutNotify(string.Empty);
     }
