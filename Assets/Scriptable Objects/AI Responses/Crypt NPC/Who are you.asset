@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <keywords>k__BackingField:
   - who
-  - what
-  - where
+  - name
+  - your
   - you
-  <keywordsToMatch>k__BackingField: 2
-  <response>k__BackingField: I am the crypt NPC.
+  <keywordsToMatch>k__BackingField: 1
+  <response>k__BackingField: "I\u2019m Lurch, the groundskeeper of this humble graveyard.
+    I tend to the stones, the stories, and the silence. And who might you be, wandering
+    these hallowed grounds?"

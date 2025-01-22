@@ -12,6 +12,14 @@ public class OpenLink : MonoBehaviour
     [SerializeField] private Button button;
     [SerializeField] private string link;
 
+
+    private void Awake()
+    {
+        if (button == null && GetComponent<Button>() != null)
+        {
+            button = GetComponent<Button>();
+        }
+    }
     private void Start()
     {
         button.onClick.AddListener(OnButtonClicked);

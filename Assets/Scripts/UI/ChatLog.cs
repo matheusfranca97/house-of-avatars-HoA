@@ -5,7 +5,7 @@ public static class ChatLog
     public static readonly EventList<ChatLogMessage> chatLogMessages;
 
     static ChatLog()
-    { 
+    {
         chatLogMessages = new EventList<ChatLogMessage>();
         chatLogMessages.onAdd += OnAdd_ChatLogMessage;
         ResetChat();
@@ -22,6 +22,6 @@ public static class ChatLog
     public static void ResetChat()
     {
         chatLogMessages.Clear();
-        chatLogMessages.Add(new ChatLogMessage(-1, ChatMessageType.Whisper, PlayerAuthLevel.Server, "Welcome to House of Avatars!"));
+        chatLogMessages.Add(new ChatLogMessage(-1, ChatMessageType.Whisper, PlayerAuthLevel.Server, "Welcome to House of Avatars! These walls have ears. Invisible guests may be lurking and able to see your conversations"));
     }
 }

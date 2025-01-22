@@ -10,7 +10,7 @@ public class ChatInput : MonoBehaviour
     public EventVariable<ChatInput, ChatMessageType> chatMode;
 
     private const string PULPIT_NPC_NAME = "Seeker Lilith";
-    private const string CRYPT_NPC_NAME = "Lurch";
+    private const string CRYPT_NPC_NAME = "Lurch, the Groundskeeper";
     private const string SHOUT_CHAT_FORMAT = "{0}: {1}";
     private const string WHISPER_SEND_FORMAT = "To {0}: {1}";
 

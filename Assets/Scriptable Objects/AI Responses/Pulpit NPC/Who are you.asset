@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <keywords>k__BackingField:
   - who
-  - what
-  - where
+  - name
+  - your
   - you
+  - name
   <keywordsToMatch>k__BackingField: 2
-  <response>k__BackingField: I am the pulpit NPC.
+  <response>k__BackingField: "I am Seeker Lilith, a humble voice of reflection and
+    sanctuary. I\u2019m here to share what little wisdom I\u2019ve gathered\u0336if
+    you\u2019re ready to listen.\u201D"

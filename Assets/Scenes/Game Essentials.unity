@@ -14976,6 +14976,7 @@ GameObject:
   - component: {fileID: 568847431}
   - component: {fileID: 568847430}
   - component: {fileID: 568847429}
+  - component: {fileID: 568847434}
   m_Layer: 5
   m_Name: Rules Button
   m_TagString: Untagged
@@ -15011,7 +15012,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568847427}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e47d929048ec5c54b9776f03b8db313e, type: 3}
   m_Name: 
@@ -15120,6 +15121,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568847427}
   m_CullTransparentMesh: 1
+--- !u!114 &568847434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568847427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c114a8bde672e4f89a4a7c73b85556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  link: https://www.houseofavatars.com/#ed-130236781
 --- !u!1 &581363855
 GameObject:
   m_ObjectHideFlags: 0
@@ -22750,6 +22765,7 @@ GameObject:
   - component: {fileID: 930018906}
   - component: {fileID: 930018905}
   - component: {fileID: 930018904}
+  - component: {fileID: 930018909}
   m_Layer: 5
   m_Name: 'Tutorial Button '
   m_TagString: Untagged
@@ -22805,7 +22821,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930018902}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e47d929048ec5c54b9776f03b8db313e, type: 3}
   m_Name: 
@@ -22894,6 +22910,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930018902}
   m_CullTransparentMesh: 1
+--- !u!114 &930018909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930018902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c114a8bde672e4f89a4a7c73b85556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  link: https://www.youtube.com/watch?v=wr0f1Ei4Y8Y
 --- !u!1 &936292393
 GameObject:
   m_ObjectHideFlags: 0
@@ -32804,6 +32834,7 @@ GameObject:
   - component: {fileID: 1380798569}
   - component: {fileID: 1380798572}
   - component: {fileID: 1380798573}
+  - component: {fileID: 1380798574}
   m_Layer: 5
   m_Name: Help Button
   m_TagString: Untagged
@@ -32941,13 +32972,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380798566}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e47d929048ec5c54b9776f03b8db313e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1380798569}
   screenType: 2
+--- !u!114 &1380798574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380798566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c114a8bde672e4f89a4a7c73b85556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  link: https://www.houseofavatars.com/#ed-130236781
 --- !u!1 &1381789986
 GameObject:
   m_ObjectHideFlags: 0

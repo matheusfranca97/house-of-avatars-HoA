@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class Interactable_CryptNPC : Interactable
@@ -22,6 +23,8 @@ public class Interactable_CryptNPC : Interactable
 
     public void ReceiveWhisper(string message)
     {
+
+        Debug.Log(chatResponses.Length);
         AIChatResponse matchingResponse;
         if (!ChatResponseChecker.TryGetMatchingChatResponse(chatResponses, message, out matchingResponse))
             return;
