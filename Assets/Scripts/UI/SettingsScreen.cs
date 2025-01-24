@@ -27,7 +27,7 @@ public class SettingsScreen : MonoBehaviour
 
     private List<Resolution> resolutions;
 
-    private List<int> fpsLimits = new ()
+    private List<int> fpsLimits = new()
     {
         -1,
         10,

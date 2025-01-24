@@ -38,6 +38,7 @@ public class AccountSettings : TaskProcessor
     [SerializeField] private Button changePasswordButton;
 
     [SerializeField] private Button deleteAccountButton;
+    [SerializeField] private Toggle deleteAccountToggle;
 
 
     private void Start()
@@ -46,10 +47,10 @@ public class AccountSettings : TaskProcessor
         ingameUI = GetComponentInParent<IngameUI>();
         pages = GetComponentsInChildren<AccountSettingsButton>().ToList();
 
-        for (int i=0; i < pages.Count; i++)
+        for (int i = 0; i < pages.Count; i++)
         {
             if (i == 0) pages[i].Activate(activatedColour, activatedFontSize);
-            else pages[i].DeActivate(deactivatedColour, deactivatedFontSize); 
+            else pages[i].DeActivate(deactivatedColour, deactivatedFontSize);
 
             int x = i;
             pages[i].button.onClick.AddListener(() => OnPageChange(x));
@@ -112,7 +113,7 @@ public class AccountSettings : TaskProcessor
             changeUsernameButton.interactable = true;
             return;
         }
-        
+
         string oldName = gameUser.Username;
         gameUser.Username = usernameField.text;
 
@@ -133,7 +134,7 @@ public class AccountSettings : TaskProcessor
                 Succeed("Username changed successfully, but reserve failed, please contact support");
                 changeUsernameButton.interactable = true;
             }));
-        }, 
+        },
         () => changeUsernameButton.interactable = true));
     }
 
@@ -194,6 +195,10 @@ public class AccountSettings : TaskProcessor
 
     private async void OnDeleteAccountClick()
     {
+        if (!deleteAccountToggle.isOn)
+        {
+            return;
+        }
         deleteAccountButton.interactable = false;
         await SupabaseBridge.instance.SupabaseClient.Auth.SignOut();
         PlayerController.instance.networkController.ServerDeleteUserRPC(NetworkManager.Singleton.LocalClientId);

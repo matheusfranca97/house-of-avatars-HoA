@@ -30,28 +30,7 @@ public class SupabaseBridge : TaskProcessor
     private static readonly string supabaseTestKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtneWltYXltdG9lcHZ5ZmN5ZnNkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjgyOTgxMzMsImV4cCI6MjA0Mzg3NDEzM30.aT5Rgl7WO_tUr7bfRsVLXEH1pLxo0cP5dD2cJjyg7lk";
 
     private static readonly string clientCertificate =
-@"-----BEGIN CERTIFICATE-----
-MIIDszCCApugAwIBAgIUCjTu4m1VFgkqVsHMUxiczT0nWtIwDQYJKoZIhvcNAQEL
-BQAwaTELMAkGA1UEBhMCVUsxFjAUBgNVBAgMDVdlc3QgTWlkbGFuZHMxFDASBgNV
-BAcMC1N0b3VyYnJpZGdlMRcwFQYDVQQKDA5BenVsb24gU3R1ZGlvczETMBEGA1UE
-AwwKSG9BX1NlcnZlcjAeFw0yNDEwMTIxMDM1NDZaFw0yNzEwMTIxMDM1NDZaMGkx
-CzAJBgNVBAYTAlVLMRYwFAYDVQQIDA1XZXN0IE1pZGxhbmRzMRQwEgYDVQQHDAtT
-dG91cmJyaWRnZTEXMBUGA1UECgwOQXp1bG9uIFN0dWRpb3MxEzARBgNVBAMMCkhv
-QV9TZXJ2ZXIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDULBgBk7b3
-vnQEPaPN9YsZYVaRHi4dH3mb2HA6k0H730N2a+OkXVAHqg+4QlGtJKuYjOSOuNjx
-IMlI9z3cMcWUpi1gtX4QjGWeDVgadN5VEepqWq1tivba9DKqM2j1Pe7f6fRmUPbJ
-RH4pkk9txCmvQILvmZkCbdHx6PGyLsQAkRJsxHldfEoUUIgrmZKBgp4MLng3p1im
-+e/zD987OxXjn2iS6nx1N9RzXG7SOLHiZj8jr8a5pZPIbXltZ0vQeoheQc+zojxC
-1MxbX01NQJ/5VCXYnOyFiWMfloj1zuBW5MRQdrKdw8bGzB85RVkAMXvorW89Lb+D
-IiC1zpsqvPa9AgMBAAGjUzBRMB0GA1UdDgQWBBSg9GIAeWEmFN1qu5jYarE5I0mr
-9DAfBgNVHSMEGDAWgBSg9GIAeWEmFN1qu5jYarE5I0mr9DAPBgNVHRMBAf8EBTAD
-AQH/MA0GCSqGSIb3DQEBCwUAA4IBAQBhFZ1HAwZpMmyhnO2QGAQ6ja/XxOlXe/Ir
-iundsqpYJXOTn19ERIqRbiTLhQcYEixLJuShY90s5IKa+B+Oz9aM8WAJnU8FHghy
-SsCNCnE5v/GjuEH+Lsugz1H6BCxGeah082Lg/dWo+ekWZnt+ePprme725+YvMLy/
-HUFBAgIG/QjQFCsothX0yPW7dJgwrQUGaZdf/a+qq8qGqzy6z7Cb4BBpsjY3rEaH
-WD1FUZpGIURs+eko0lX5vV8V9uB/hkQejXHGPvigke6cOB+KwjGe4ICxxLer8DdC
-BZn75FGJOVYrUwtlnD44Xq44p8qUorVKRxFguPZjbcuDgaAtJOXP
------END CERTIFICATE-----";
+"-----BEGIN CERTIFICATE-----\nMIIDszCCApugAwIBAgIUCjTu4m1VFgkqVsHMUxiczT0nWtIwDQYJKoZIhvcNAQEL\nBQAwaTELMAkGA1UEBhMCVUsxFjAUBgNVBAgMDVdlc3QgTWlkbGFuZHMxFDASBgNV\nBAcMC1N0b3VyYnJpZGdlMRcwFQYDVQQKDA5BenVsb24gU3R1ZGlvczETMBEGA1UE\nAwwKSG9BX1NlcnZlcjAeFw0yNDEwMTIxMDM1NDZaFw0yNzEwMTIxMDM1NDZaMGkx\nCzAJBgNVBAYTAlVLMRYwFAYDVQQIDA1XZXN0IE1pZGxhbmRzMRQwEgYDVQQHDAtT\ndG91cmJyaWRnZTEXMBUGA1UECgwOQXp1bG9uIFN0dWRpb3MxEzARBgNVBAMMCkhv\nQV9TZXJ2ZXIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDULBgBk7b3\nvnQEPaPN9YsZYVaRHi4dH3mb2HA6k0H730N2a+OkXVAHqg+4QlGtJKuYjOSOuNjx\nIMlI9z3cMcWUpi1gtX4QjGWeDVgadN5VEepqWq1tivba9DKqM2j1Pe7f6fRmUPbJ\nRH4pkk9txCmvQILvmZkCbdHx6PGyLsQAkRJsxHldfEoUUIgrmZKBgp4MLng3p1im\n+e/zD987OxXjn2iS6nx1N9RzXG7SOLHiZj8jr8a5pZPIbXltZ0vQeoheQc+zojxC\n1MxbX01NQJ/5VCXYnOyFiWMfloj1zuBW5MRQdrKdw8bGzB85RVkAMXvorW89Lb+D\nIiC1zpsqvPa9AgMBAAGjUzBRMB0GA1UdDgQWBBSg9GIAeWEmFN1qu5jYarE5I0mr\n9DAfBgNVHSMEGDAWgBSg9GIAeWEmFN1qu5jYarE5I0mr9DAPBgNVHRMBAf8EBTAD\nAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQBhFZ1HAwZpMmyhnO2QGAQ6ja/XxOlXe/Ir\niundsqpYJXOTn19ERIqRbiTLhQcYEixLJuShY90s5IKa+B+Oz9aM8WAJnU8FHghy\nSsCNCnE5v/GjuEH+Lsugz1H6BCxGeah082Lg/dWo+ekWZnt+ePprme725+YvMLy/\nHUFBAgIG/QjQFCsothX0yPW7dJgwrQUGaZdf/a+qq8qGqzy6z7Cb4BBpsjY3rEaH\nWD1FUZpGIURs+eko0lX5vV8V9uB/hkQejXHGPvigke6cOB+KwjGe4ICxxLer8DdC\nBZn75FGJOVYrUwtlnD44Xq44p8qUorVKRxFguPZjbcuDgaAtJOXP\n-----END CERTIFICATE-----";
 
     private NetworkManager networkManager;
 
@@ -114,7 +93,7 @@ BZn75FGJOVYrUwtlnD44Xq44p8qUorVKRxFguPZjbcuDgaAtJOXP
         GameUser user = new(session.User.Id, displayName, authLevel, false, false, null, null, session.User.CreatedAt);
         return (await SupabaseClient
             .From<GameUser>()
-            .Insert(user, new QueryOptions { Returning = QueryOptions.ReturnType.Representation}))
+            .Insert(user, new QueryOptions { Returning = QueryOptions.ReturnType.Representation }))
             .Model;
     }
 
@@ -186,7 +165,7 @@ BZn75FGJOVYrUwtlnD44Xq44p8qUorVKRxFguPZjbcuDgaAtJOXP
                 tryingRelay = false;
                 relaySuccess = false;
             }
-            else if (connectionEvent.EventType is ConnectionEvent.ClientConnected) 
+            else if (connectionEvent.EventType is ConnectionEvent.ClientConnected)
             {
                 if (tryingLocal)
                 {
@@ -216,11 +195,35 @@ BZn75FGJOVYrUwtlnD44Xq44p8qUorVKRxFguPZjbcuDgaAtJOXP
 
     public async Task JoinServer()
     {
+        Debug.Log("entering...");
         //Connect to the server
         await UnityServices.InitializeAsync();
         if (!AuthenticationService.Instance.IsSignedIn)
         {
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        }
+
+        Debug.Log("Checking and clearing invalid game_id entries...");
+        try
+        {
+            var gameIdResponse = await SupabaseClient.From<GameID>()
+                .Select("*")
+                .Where(x => x.Id == "server")
+                .Single();
+
+            if (gameIdResponse == null || string.IsNullOrEmpty(gameIdResponse.JoinCode))
+            {
+                Debug.Log("No valid game_id found. Proceeding to matchmaking.");
+            }
+            else
+            {
+                Debug.Log("Clearing invalid game_id...");
+                await SupabaseClient.From<GameID>().Filter("Id", Supabase.Postgrest.Constants.Operator.Equals, "server").Delete();
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogWarning($"Error clearing game_id: {e.Message}. Proceeding to matchmaking anyway.");
         }
 
         ConnectionRequest request = new ConnectionRequest(
@@ -249,7 +252,7 @@ BZn75FGJOVYrUwtlnD44Xq44p8qUorVKRxFguPZjbcuDgaAtJOXP
             await Awaitable.FixedUpdateAsync();
         }
 
-        if (!networkManager.IsClient) 
+        if (!networkManager.IsClient)
         {
             networkManager.OnConnectionEvent -= OnConnectionEvent;
             networkManager = relayNetworkManager;

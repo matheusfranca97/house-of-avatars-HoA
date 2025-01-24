@@ -61,6 +61,7 @@ public class UserAutocompleteField : MonoBehaviour
 
     public void OnUserFieldClicked(AutocompleteField userField)
     {
+        Debug.Log("deactivating input field");
         field.text = userField.text.text;
         field.DeactivateInputField();
 
