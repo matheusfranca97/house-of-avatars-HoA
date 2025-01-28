@@ -69,7 +69,23 @@ public class LoginUIPage : TaskProcessor
         }
 
         Task<Session> loginTask = SupabaseBridge.instance.SupabaseClient.Auth.SignInWithPassword(emailField.text, passwordField.text);
-        yield return ProcessTask(loginTask, x => StartCoroutine(OnLoginAuthed(x)));
+        yield return ProcessTask(loginTask, session =>
+        {
+            // Adicione os logs para verificar o RefreshToken e AccessToken
+            if (session != null)
+            {
+                Debug.Log($"Login successful!");
+                Debug.Log($"AccessToken: {session.AccessToken}");
+                Debug.Log($"RefreshToken: {session.RefreshToken}");
+                Debug.Log($"ExpiresIn: {session.ExpiresIn}");
+            }
+            else
+            {
+                Debug.LogError("Login failed: Session is null.");
+            }
+
+            StartCoroutine(OnLoginAuthed(session));
+        });
     }
 
     private IEnumerator OnLoginAuthed(Session currentSession)

@@ -31,6 +31,7 @@ namespace Supabase.Gotrue
 		/// <param name="client"></param>
 		public TokenRefresh(Client client)
 		{
+			UnityEngine.Debug.Log("TokenRefresh" + client);
 			_client = client;
 		}
 		/// <summary>
@@ -41,6 +42,8 @@ namespace Supabase.Gotrue
 		/// <exception cref="ArgumentOutOfRangeException"></exception>
 		public void ManageAutoRefresh(IGotrueClient<User, Session> sender, Constants.AuthState stateChanged)
 		{
+
+			UnityEngine.Debug.Log("estou entrando no manageautorefresh do token");
 			switch (stateChanged)
 			{
 				case SignedIn:
@@ -64,6 +67,7 @@ namespace Supabase.Gotrue
 					// Doesn't affect auto refresh
 					break;
 				case TokenRefreshed:
+					UnityEngine.Debug.Log("AT + TokenRefreshed");
 					// Doesn't affect auto refresh
 					break;
 				case Shutdown:
@@ -81,6 +85,7 @@ namespace Supabase.Gotrue
 		/// </summary>
 		private void InitRefreshTimer()
 		{
+			UnityEngine.Debug.Log("initrefreshtimer");
 			CreateNewTimer();
 		}
 
@@ -91,19 +96,23 @@ namespace Supabase.Gotrue
 		/// </summary>
 		private async void HandleRefreshTimerTick(object _)
 		{
+			UnityEngine.Debug.Log("HandleRefreshTimerTick");
 			try
 			{
+				UnityEngine.Debug.Log("try 1");
 				if (_client.Online)
 					await _client.RefreshToken();
 			}
 			catch (Exception ex)
 			{
+				UnityEngine.Debug.Log("catch 1");
 				// Something unusually bad happened!
 				if (Debug)
 					_client.Debug(ex.Message, ex);
 			}
 			finally
 			{
+				UnityEngine.Debug.Log("finally 1");
 				CreateNewTimer();
 			}
 		}
@@ -119,6 +128,7 @@ namespace Supabase.Gotrue
 		/// </summary>
 		private void CreateNewTimer()
 		{
+			UnityEngine.Debug.Log("createnewtimer");
 			if (_client.CurrentSession == null || _client.CurrentSession.ExpiresIn == default)
 			{
 				if (Debug)
@@ -155,6 +165,7 @@ namespace Supabase.Gotrue
 		/// </summary>
 		private TimeSpan GetInterval()
 		{
+			UnityEngine.Debug.Log("getinterval");
 			if (_client.CurrentSession == null || _client.CurrentSession.ExpiresIn == default)
 			{
 				return TimeSpan.Zero;

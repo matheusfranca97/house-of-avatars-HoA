@@ -15,7 +15,7 @@ public class PrayMicrophoneToggle : MonoBehaviour
     {
         //toggle.onValueChanged.AddListener(OnToggled);
         ChatInput.instance.chatMode.onValueChange += OnChatModeChanged;
-        if (ChatInput.instance.chatMode.value != ChatMessageType.Pray) 
+        if (ChatInput.instance.chatMode.value != ChatMessageType.Pray)
         {
             gameObject.SetActive(false);
         }
@@ -23,15 +23,15 @@ public class PrayMicrophoneToggle : MonoBehaviour
 
     private void OnChatModeChanged(ChatMessageType oldValue, ChatMessageType newValue)
     {
-        if (newValue is ChatMessageType.Pray)
-        {
-            toggle.SetIsOnWithoutNotify(true);
-            gameObject.SetActive(true);
-        }
-        else if (oldValue is ChatMessageType.Pray)
-        {
-            gameObject.SetActive(false);
-        }
+        // if (newValue is ChatMessageType.Pray)
+        // {
+        //     toggle.SetIsOnWithoutNotify(true);
+        //     gameObject.SetActive(true);
+        // }
+        // else if (oldValue is ChatMessageType.Pray)
+        // {
+        //     gameObject.SetActive(false);
+        // }
     }
 
     private void OnDestroy()

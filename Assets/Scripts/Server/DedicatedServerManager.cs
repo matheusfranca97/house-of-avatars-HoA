@@ -1,4 +1,4 @@
-﻿using Supabase;
+using Supabase;
 using Supabase.Gotrue;
 using Supabase.Gotrue.Interfaces;
 using System;
@@ -8,22 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Unity.Collections;
 using Unity.Netcode;
-using Unity.Netcode.Transports.UTP;
-using Unity.Services.Matchmaker.Models;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+
 using Client = Supabase.Client;
-using Unity.Services.Matchmaker;
+
 using System.Collections;
 using System.Data;
-using Unity.Services.Core;
-using Unity.Services.Authentication;
-using Unity.Services.Relay;
-using Unity.Networking.Transport.Relay;
-using Unity.Services.Relay.Models;
-using Unity.VisualScripting;
-using Unity.Services.Authentication.PlayerAccounts;
+
 
 
 
@@ -720,7 +713,7 @@ NgVIknKY/55pBVa8s0YS8O1l0jbVPFsYOCtyNPkdiWdLCGZqXJ6R
 
         if (senderPlayer.authLevel is PlayerAuthLevel.Guest)
         {
-            SendWhisperMessage(0, sender, ChatLogMessage.FromServer("Sorry, guests cannot message"));
+            SendWhisperMessage(0, sender, ChatLogMessage.FromServer("Sorry, guests cannot message, please register an account if you want to chat."));
             return;
         }
 

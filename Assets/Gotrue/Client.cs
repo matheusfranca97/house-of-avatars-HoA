@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
@@ -81,8 +82,13 @@ namespace Supabase.Gotrue
 
 			if (options.AutoRefreshToken)
 			{
+				UnityEngine.Debug.Log("AutoRefreshToken está ativado no Supabase Client.");
 				TokenRefresh = new TokenRefresh(this);
 				_authEventHandlers.Add(TokenRefresh.ManageAutoRefresh);
+			}
+			else
+			{
+				UnityEngine.Debug.Log("AutoRefreshToken está desativado no Supabase Client.");
 			}
 		}
 
@@ -277,7 +283,7 @@ namespace Supabase.Gotrue
 
 			// Handle case when a user registers and has not confirmed email (and options do not allow for this), return null for session.
 			if (newSession?.User?.ConfirmedAt == null &&
-			    (newSession?.User == null || !Options.AllowUnconfirmedUserSessions))
+				(newSession?.User == null || !Options.AllowUnconfirmedUserSessions))
 				return null;
 
 			NotifyAuthStateChange(SignedIn);
@@ -787,7 +793,7 @@ namespace Supabase.Gotrue
 			if (!Online)
 				throw new GotrueException("Only supported when online", Offline);
 
-			var result =  await _api.Verify(CurrentSession.AccessToken, mfaVerifyParams);
+			var result = await _api.Verify(CurrentSession.AccessToken, mfaVerifyParams);
 
 			if (result == null || string.IsNullOrEmpty(result.AccessToken))
 				throw new GotrueException("Could not verify MFA.", MfaChallengeUnverified);
@@ -826,7 +832,7 @@ namespace Supabase.Gotrue
 				return null;
 			}
 
-			var result =  await _api.Verify(CurrentSession.AccessToken, new MfaVerifyParams
+			var result = await _api.Verify(CurrentSession.AccessToken, new MfaVerifyParams
 			{
 				FactorId = mfaChallengeAndVerifyParams.FactorId,
 				Code = mfaChallengeAndVerifyParams.Code,
@@ -860,7 +866,7 @@ namespace Supabase.Gotrue
 			if (!Online)
 				throw new GotrueException("Only supported when online", Offline);
 
-			return  await _api.Unenroll(CurrentSession.AccessToken, mfaUnenrollParams);
+			return await _api.Unenroll(CurrentSession.AccessToken, mfaUnenrollParams);
 		}
 
 		/// <inheritdoc />
